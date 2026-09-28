@@ -35,7 +35,7 @@ function App() {
   };
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/predict", {
+    const response = await fetch("https://customer-churn-api-crdk.onrender.com/predict", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,15 +76,20 @@ function App() {
                 />
 
           <label>Geography</label>
-          <select>
-            <option value="">Select Geography</option>
+          <select
+            value={geography}
+            onChange={(e) => setGeography(e.target.value)}
+          >
             <option value="France">France</option>
             <option value="Germany">Germany</option>
             <option value="Spain">Spain</option>
           </select>
 
           <label>Gender</label>
-          <select>
+          <select
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
             <option value="">Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -119,14 +124,20 @@ function App() {
           />
 
           <label>Has Credit Card</label>
-          <select>
+          <select
+            value={hasCrCard}
+            onChange={(e) => setHasCrCard(e.target.value)}
+          >
             <option value="">Select</option>
             <option value="1">Yes</option>
             <option value="0">No</option>
           </select>
 
           <label>Is Active Member</label>
-          <select>
+          <select
+            value={isActiveMember}
+            onChange={(e) => setIsActiveMember(e.target.value)}
+          >
             <option value="">Select</option>
             <option value="1">Yes</option>
             <option value="0">No</option>
@@ -147,7 +158,10 @@ function App() {
           />
 
           <label>Card Type</label>
-          <select>
+          <select
+            value={cardType}
+            onChange={(e) => setCardType(e.target.value)}
+          >
             <option value="">Select Card Type</option>
             <option value="DIAMOND">DIAMOND</option>
             <option value="GOLD">GOLD</option>
